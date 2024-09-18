@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table.fraud_calls
+      author: Pavel
+      failOnError: true
+      validCheckSum: ANY
+      changes:
+        - sqlFile: { dbms: 'postgresql,h2', path: sql/updates/create-table.fraud_calls.sql }
+  - changeSet:
+      id: timestamp-to-timestamp-with-time-zone.fraud_calls
+      author: Pavel
+      failOnError: true
+      validCheckSum: ANY
+      changes:
+        - sqlFile: { dbms: 'postgresql,h2', path: sql/updates/timestamp-to-timestamp-with-time-zone.fraud_calls.sql }

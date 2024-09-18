@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/AppDataBase"
+    username: postgres
+    password: 2709
+
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+  liquibase:
+    enabled: true
+    change-log: sql/schema.changelog.yaml
+    default-schema: public
+  jpa:
+    hibernate:
+      ddl-auto: none
